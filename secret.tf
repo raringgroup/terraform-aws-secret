@@ -42,16 +42,14 @@ data "aws_kms_key" "kms_key" {
 # Secret Contexts
 # ------------------------------------------------------------------------------
 module "secret_context" {
-  source     = "SevenPico/context/null"
-  version    = "2.0.0"
+  source     = "git::https://github.com/raringgroup/terraform-null-context.git?ref=v0.1.0"
   context    = module.context.self
   enabled    = module.context.enabled
   attributes = var.secret_attributes_override != null ? var.secret_attributes_override : ["secret"]
 }
 
 module "secret_kms_key_context" {
-  source     = "SevenPico/context/null"
-  version    = "2.0.0"
+  source     = "git::https://github.com/raringgroup/terraform-null-context.git?ref=v0.1.0"
   context    = module.secret_context.self
   attributes = var.kms_key_attributes_override != null ? var.kms_key_attributes_override : ["kms", "key"]
 }
@@ -125,8 +123,7 @@ data "aws_iam_policy_document" "kms_key_access_policy_doc" {
 # KMS Key
 # ------------------------------------------------------------------------------
 module "kms_key" {
-  source  = "SevenPicoForks/kms-key/aws"
-  version = "2.0.0"
+  source  = "git::https://github.com/raringgroup/terraform-aws-kms-key.git?ref=v0.1.0"
   context = module.secret_kms_key_context.self
   enabled = module.context.enabled && local.kms_key_enabled
 
