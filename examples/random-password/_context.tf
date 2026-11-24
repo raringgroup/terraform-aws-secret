@@ -22,7 +22,7 @@
 ## ----------------------------------------------------------------------------
 
 module "context" {
-  # Modified from upstream: uses the Raring Group fork instead of the SevenPico registry module.
+  # Modified from upstream: uses the Raring Group context module.
   source = "git::https://github.com/raringgroup/terraform-null-context.git?ref=v0.1.0"
 
   enabled             = var.enabled

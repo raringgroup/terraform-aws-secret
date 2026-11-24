@@ -15,8 +15,8 @@
 ## ----------------------------------------------------------------------------
 
 ## ----------------------------------------------------------------------------
-##  ./examples/letsencrypt/_fixtures.auto.tfvars
-##  This file contains code written by SevenPico, Inc.
+##  ./examples/random-password/_fixtures.auto.tfvars
+##  This file contains code written by Raring Group LLC.
 ## ----------------------------------------------------------------------------
 
-root_domain = "7pi.io"
+root_domain = "example.com"

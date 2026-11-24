@@ -1,11 +1,11 @@
 locals {
   account_id  = get_aws_account_id()
-  tenant      = "Brim"
+  tenant      = "Example"
 
   region = get_env("AWS_REGION")
-  root_domain = "modules.thebrim.io"
+  root_domain = "example.com"
 
-  namespace   = "brim"
+  namespace   = "example"
   project     = "aws-secret" //replace(basename(get_repo_root()), "teraform-", "")
   environment = ""
   stage       = basename(get_terragrunt_dir()) //
@@ -55,9 +55,9 @@ remote_state {
   backend = "s3"
   disable_init = false
   config  = {
-    bucket                = "brim-sandbox-tfstate"
+    bucket                = "example-tfstate"
     disable_bucket_update = true
-    dynamodb_table        = "brim-sandbox-tfstate-lock"
+    dynamodb_table        = "example-tfstate-lock"
     encrypt               = true
     key                   = "${local.account_id}/${local.project}/${local.stage}/terraform.tfstate"
     region                = local.region

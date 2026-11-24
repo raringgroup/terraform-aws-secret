@@ -15,12 +15,12 @@
 ## ----------------------------------------------------------------------------
 
 ## ----------------------------------------------------------------------------
-##  ./examples/letsencrypt/_fixtures.context.auto.tfvars
-##  This file contains code written by SevenPico, Inc.
+##  ./examples/random-password/_fixtures.context.auto.tfvars
+##  This file contains code written by Raring Group LLC.
 ## ----------------------------------------------------------------------------
 
 enabled   = true
-namespace = "sp"
+namespace = "example"
 #tenant              =
 #project             =
 #region              =
@@ -39,4 +39,4 @@ name = "random-password"
 #descriptor_formats  =
 #labels_as_tags      =
 dns_name_format = "$${name}.$${domain_name}"
-domain_name     = "secret-rp.7pi.io"
+domain_name     = "secret-rp.example.com"
